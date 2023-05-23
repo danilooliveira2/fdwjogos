@@ -1,0 +1,22 @@
+- Conexão MySQL PHP
+
+- Página Index (formulário)
+
+- Página Index (login - Requisições Web)
+
+- Página Index (Bootstrap - CDN)
+
+- Página Cadastro (Campos) (JS DataPicker)
+
+- Página Cadastro - Processamento
+
+- Página Cadastro - Retornos
+
+- Página Cadastro - Confirmação por e-mail
+
+- Página Principal (Link Jogo)
+
+- Página Principal - Lista de Ranking dos melhores
+
+- Página de Demonstração do Cadastro de Ranking
+
