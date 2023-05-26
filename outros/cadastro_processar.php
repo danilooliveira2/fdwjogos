@@ -1,15 +1,19 @@
 <?php
 
-require_once "conexao.php";
+require_once "../conexao.php";
 
 $mensagem = "";
 
 // Verificar se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     // Obter os valores enviados do formulário
     $nome = $_POST["nome"];
     $email = $_POST["email"];
+    $dataNasc = $_POST["datanasc"];
+    $login = $_POST["login"];
     $senha = md5($_POST["senha"]); // Converter a senha para MD5
+
 
     // Realizar as validações necessárias
     
@@ -21,14 +25,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($resultado->num_rows > 0) {
         
-        $mensagem = "E-mail já cadastrado. Por favor, escolha outro.";
+        $mensagem = "O e-mail informado já está cadastro em nosso sistema. ";
 
     } else {
         // Inserir os dados no banco de dados
-        $sql = "INSERT INTO USUARIOS (nome, email, senha) VALUES ('$nome', '$email', '$senha')";
+        $sql = "INSERT INTO USUARIOS (nome, email, login, senha, data_nascimento)
+                 VALUES ('$nome', '$email', '$login', '$senha', '$dataNasc' )";
 
         if ($conexao->query($sql) === true) {
-            $mensagem = "Cadastro realizado com sucesso!";
+            $mensagem = "SUCESSO";
         } else {
             $mensagem = "Erro ao cadastrar. Por favor, tente novamente.";
         }

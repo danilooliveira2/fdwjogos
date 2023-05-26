@@ -15,18 +15,6 @@
     </style>
 
 
-
-
-    <!-- INCLUSOES PARA DATA PICKER -->
-
-    <!-- Inclua o jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <!-- Inclua o Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
-
-
-
 </head>
 
 <body>
@@ -38,27 +26,28 @@
 
 
                         <h2 class="text-center">Cadastro de Usuário</h2>
-                        <form method="post" action="cadastro_processar.php" class="mt-4">
+                        
+                        <form  class="mt-4">
+                           
                             <div class="mb-3">
-                                <label for="nome" class="form-label ">Nome</label>
+                                <label for="nome" >Nome</label>
                                 <input type="text" name="nome" id="nome" class="form-control">
                             </div>
                             <div class="mb-3">
-                                <label for="email" class="form-label">E-mail</label>
+                                <label for="email" >E-mail</label>
                                 <input type="email" name="email" id="email" class="form-control">
                             </div>
                             <div class="mb-3">
-                                <label for="dt_nasc" class="form-label">Data de Nascimento</label>
-                                <input type="date" name="dt_nasc" id="dt_nasc" class="form-control">
+                                <label for="datanasc" >Data de Nascimento</label>
+                                <input type="date" name="datanasc" id="datanasc" class="form-control">
                             </div>
 
-
                             <div class="mb-3">
-                                <label for="login" class="form-label ">Nome</label>
+                                <label for="login" >Nome de Usuário (login)</label>
                                 <input type="text" name="login" id="login" class="form-control">
                             </div>
                             <div class="mb-3">
-                                <label for="senha" class="form-label ">Senha</label>
+                                <label for="senha" >Senha</label>
                                 <input type="password" name="senha" id="senha" class="form-control">
                             </div>
                             <div class="text-center">
@@ -75,9 +64,20 @@
         </div>
     </div>
 
+
+    
+    <!-- INCLUSOES PARA DATA PICKER -->
+
+    <!-- Inclua o jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Inclua o Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
     <script>
         $(function() {
-            // Inicializa o Bootstrap Datepicker
+            // Inicializa o Datepicker
             $(".datepicker").datepicker();
         });
     </script>

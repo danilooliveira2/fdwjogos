@@ -14,9 +14,6 @@
         }
     </style>
 
-
-
-
     <!-- INCLUSOES PARA DATA PICKER -->
 
     <!-- Inclua o jQuery -->
@@ -36,23 +33,18 @@
                 <div class="card bg-white bg-opacity-75">
                     <div class="card-body">
 
+                    
                         <?php
 
-                        // $retorno = "";
-                        // if (isset($_GET['mensagem'])) {
-                            $retorno = $_GET['mensagem'];
-                        // }
-
                         //MENSAGEM DE ERRO 
-                        if (isset($retorno) && $retorno == "sucesso") { ?>
+                        if (isset($_GET['mensagem']) && $_GET['mensagem'] == "sucesso") { ?>
 
                             <div id="mensagem-sucesso" class="alert alert-success">Cadastro realizado com sucesso!</div>
                         <?php
 
-                            
-                            //REALIZAR O CADASTRO
-                        } else {  ?>
+                        } else {
 
+                        ?>
                             <h2 class="text-center">Cadastro de Usuário</h2>
                             <form method="post" action="cadastro_processar.php" class="mt-4">
                                 <div class="mb-3">
@@ -64,8 +56,8 @@
                                     <input type="email" name="email" id="email" class="form-control">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="dt_nasc" class="form-label">Data de Nascimento</label>
-                                    <input type="date" name="dt_nasc" id="dt_nasc" class="form-control">
+                                    <label for="datanasc" class="form-label">Data de Nascimento</label>
+                                    <input type="date" name="datanasc" id="datanasc" class="form-control">
                                 </div>
 
 
@@ -79,29 +71,28 @@
                                 </div>
 
                                 <div class="text-center">
-                                        <button type="submit" class="btn btn-warning btn-round p-2">Realizar Cadastro</button>
+                                    <button type="submit" class="btn btn-warning btn-round p-2">Realizar Cadastro</button>
                                 </div>
 
-                                <?php if (isset($retorno)) { ?>
+                                <?php if (isset($_GET['mensagem'])) { ?>
+
                                     <div id="mensagem-warning" class="alert alert-warning mt-3">
-                                        <?php echo $retorno; ?>
+                                        <?php echo $_GET['mensagem']; ?>
                                     </div>
+
                                 <?php } ?>
 
 
 
                             </form>
 
-
-
-
                         <?php
                         }
                         ?>
 
-
                         <div class="text-center mt-3">
-                            <a href="index.php" class="text-primary text-decoration-none fw-bold">Voltar para o login</a>
+                            <a href="index.php" class="text-primary text-decoration-none fw-bold">
+                                Voltar para o login</a>
                         </div>
                     </div>
                 </div>
