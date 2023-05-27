@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     $login = $_POST["login"];
-    $senha = $_POST["senha"]; // md5( $_POST["senha"] ) ;
+    $senha =  md5( $_POST["senha"] ) ;  //  $_POST["senha"];
 
 
     $sql = "SELECT * FROM USUARIOS WHERE login = '$login' AND senha = '$senha' ";
@@ -82,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </form>
 
                         <div class="text-center mt-3">
-                            <a href="cadastro_login.php" class="text-gray-600 text-decoration-none fw-bold fs-7 text-secondary">
+                            <a href="cadastro.php" class="text-gray-600 text-decoration-none fw-bold fs-7 text-secondary">
                                 Ainda não tenho cadastro</a>
                         </div>
                         <?php if ($mensagem) { ?>

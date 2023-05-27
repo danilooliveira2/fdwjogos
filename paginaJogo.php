@@ -1,14 +1,19 @@
 <?php
 
+
 session_start();
 
 if (isset($_SESSION["id"])){
+
     $nome = $_SESSION["nome"];
     $id = $_SESSION["id"];
+
 }else {
     header("Location: index.php");
     exit();
 }
+
+
 
 
 ?>
@@ -28,7 +33,8 @@ if (isset($_SESSION["id"])){
 
         <div class="row">
             <div class="col-md-12">
-                <p>Olá <?php  echo $nome ?> , seja bem-vindo. Escolha seu jogo favorito e inicie a partida agora mesmo:</p>
+                <p>Olá <?php  echo $nome ?> , seja bem-vindo.<br>
+                 Escolha seu jogo favorito e inicie a partida agora mesmo:</p>
             </div>
             <br>
             <br>
@@ -50,6 +56,15 @@ if (isset($_SESSION["id"])){
             </div>
 
         </div>
+
+
+        
+        <div class="row mt-5">
+            <div class="col-md-12 text-center">
+                <input type="submit" name="btnSair" class="btn btn-danger" value="Sair da Conta"/>
+            </div>
+        </div>
+
     </div>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.2.0/js/bootstrap.bundle.min.js"></script>
